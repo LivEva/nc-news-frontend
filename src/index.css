@@ -1,4 +1,61 @@
-:root {
+h1 {
+
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+
+}
+
+.articles-list{
+
+  padding: 20px;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+#article-list-img {
+  max-width: 100%; /* Ensures the image fits within the div */
+  height: auto;
+}
+
+#article-title{
+
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+.articles-list {
+  flex: 1 1 calc(33.333% - 20px); 
+  box-sizing: border-box; 
+}
+
+#articles-list-buttons{
+
+  background-color:aliceblue;
+}
+
+
+
+
+
+
+
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +122,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
