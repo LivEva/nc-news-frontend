@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import { getArticlesbyId } from '../api'
 import { Link, useParams } from "react-router-dom"
-import Logo from "./Logo";
+import Comments from "./Comments";
+
+
 
 const SingleArticles = () => {
 
@@ -46,11 +48,19 @@ const SingleArticles = () => {
 
        <p>Comments: {article.comment_count}</p>
 
-
        <Link to={`/articles/${article_id}`} ></Link>
+   
+
+       <div className="comments-container">
+
+       <Comments article_id={article.article_id}/>
+
+
+       </div>
       
         
        </div>
+
         
         
 
