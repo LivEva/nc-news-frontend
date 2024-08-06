@@ -1,6 +1,8 @@
-
 import { useEffect, useState } from "react"
-import allArticles from "../api"
+import { allArticles } from "../api"
+import { NavLink } from "react-router-dom";
+import ArticleCards from "./ArticleCards";
+import Logo from "./Logo";
 
 
 const ArticlesList = () => {
@@ -24,24 +26,15 @@ const ArticlesList = () => {
 
     return (
 
-
+    
         <div className="articles-container">
+    
+    {/* nav bar, logo and title would go here */}
 
         {articles.map((article) => {
 
-            return <div className="articles-list" key={article.article_id}>
 
-                <button id="articles-list-buttons">
-
-                  
-                <img src={article.article_img_url} alt="image" id="article-list-img" />
-                <h2 id="article-title">{article.title}</h2> 
-
-                </button>
-
-                
-
-            </div>
+            return <ArticleCards key={article.article_id} article={article}/>
           
         })}
         
