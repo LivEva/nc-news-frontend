@@ -7,6 +7,8 @@ h1 {
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
+/* /ARTICLES PAGE */
+
 .articles-list{
 
   padding: 20px;
@@ -31,8 +33,6 @@ h1 {
   
   
 }
-
-
 
 
 .articles-container {
@@ -66,6 +66,16 @@ h1 {
   background-color:aliceblue;
 }
 
+
+
+
+
+/* SINGLE ARTICLES PAGE  */
+
+
+
+
+
 #single-article-container{
 
   background-color: rgb(196, 208, 236);
@@ -87,6 +97,14 @@ h1 {
   width: 80%;
 
 }
+
+
+
+/* OPENING PAGE */
+
+
+
+
 
 #logo{
 

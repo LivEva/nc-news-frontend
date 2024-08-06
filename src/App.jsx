@@ -2,10 +2,10 @@
 import ArticlesList from './components/ArticlesList'
 import './App.css'
 import SingleArticles from "./components/SingleArticles";
-
 import WelcomePage from './components/WelcomePage';
 import { Route, Routes } from 'react-router-dom';
 import Logo from './components/Logo';
+import CommentCards from './components/Comments';
 
 function App() {
 
@@ -22,6 +22,9 @@ function App() {
         <Route path="/articles" element={<ArticlesList />}/>
 
         <Route path="/articles/:article_id" element={<SingleArticles />}/>
+
+        
+
 
      </Routes>
 
