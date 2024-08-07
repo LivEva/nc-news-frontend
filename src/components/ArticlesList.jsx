@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { allArticles } from "../api"
-import { NavLink } from "react-router-dom";
 import ArticleCards from "./ArticleCards";
-import Logo from "./Logo";
+
 
 
 const ArticlesList = () => {

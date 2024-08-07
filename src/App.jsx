@@ -5,7 +5,7 @@ import SingleArticles from "./components/SingleArticles";
 import WelcomePage from './components/WelcomePage';
 import { Route, Routes } from 'react-router-dom';
 import Logo from './components/Logo';
-import CommentCards from './components/Comments';
+
 
 function App() {
 
@@ -35,5 +35,3 @@ function App() {
 
 export default App
 
-// The link changes the url 
-// the route wraps around the component allows the components to use this

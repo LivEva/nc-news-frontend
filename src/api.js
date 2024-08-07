@@ -7,8 +7,6 @@ const allArticles = () => {
 
     return api.get("/api/articles").then(({ data }) => {
 
-        // console.log(data.articles)
-
         return data.articles;
 
 
@@ -19,8 +17,6 @@ const getArticlesbyId = (article_id) => {
 
     return api.get(`/api/articles/${article_id}`).then(({ data }) => {
 
-        console.log(data.article)
-
         return data.article;
     })
 }
@@ -28,8 +24,6 @@ const getArticlesbyId = (article_id) => {
 const welcomePage = () => {
 
     return api.get(`/api`).then((response) => {
-
-        console.log(response)
 
         return response
     })
@@ -41,6 +35,23 @@ const getComments = (article_id) => {
     return api.get(`/api/articles/${article_id}/comments`).then(({ data }) => {
 
         return data;
+    })
+}
+
+const changeVote = (article_id, votes) => {
+
+    const voteInfo = {inc_votes: votes}
+
+    return api.patch(`/api/articles/${article_id}`, voteInfo).then(({ data }) => {
+
+        console.log(data)
+
+        return data.article;
+
+    }).catch((error) => {
+
+        console.log(error)
+
     })
 }
 // const allUsers = () => {
@@ -70,4 +81,4 @@ const getComments = (article_id) => {
 //     })
 // }
 
-export { allArticles, getArticlesbyId, welcomePage, getComments }
+export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote }
