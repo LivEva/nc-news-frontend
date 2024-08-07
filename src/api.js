@@ -38,7 +38,7 @@ const getComments = (article_id) => {
     })
 }
 
-const changeVote = (article_id, votes) => {
+const changeVote = (article_id, votes, setError) => {
 
     const voteInfo = {inc_votes: votes}
 
@@ -50,35 +50,10 @@ const changeVote = (article_id, votes) => {
 
     }).catch((error) => {
 
-        console.log(error)
+       setError(error)
 
     })
 }
-// const allUsers = () => {
 
-//     api.get("/api/users").then((response) => {
-
-//         return response;
-//     })
-// }
-
-// const allTopics = () => {
-
-//     api.get("/api/topics").then((response) => {
-
-//         return response;
-
-//     })
-// }
-
-
-
-// const userByUsername = () => {
-
-//     api.get("/api/users/${username}").then((response) => {
-
-//         return response;
-//     })
-// }
 
 export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote }
