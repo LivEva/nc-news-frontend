@@ -9,39 +9,45 @@ const ArticleVoting = (props) => {
 
     const[isTea, setIsTea] = useState(false);
     const[isNotTea, setIsNotTea] = useState(false);
+    const[error, setError] = useState(false);
 
 
 
     const handleUpVote = () => {
 
-        setVotes(votes + 1);
 
-        changeVote(article_id, 1).then((data) => {
+        changeVote(article_id, 1, setError).then((data) => {
+
+            error ? setVotes(votes + 1) : setVotes(votes)
 
             setVotes(data.votes)
             setIsTea(true)
             setIsNotTea(false)
+        
 
+        }).catch((error) => {
+
+            setIsTea(true)
+            setIsNotTea(true)
         })
+    
 
     }
 
     const handleDownVote = () => {
 
-        setVotes(votes - 1);
+        changeVote(article_id, -1, setError).then((data) => {
 
-        changeVote(article_id, -1).then((data) => {
+            setVotes(votes - 1);
 
             setVotes(data.votes)
             setIsNotTea(true)
             setIsTea(false)
          
-
-
         }).catch((error) => {
-
-            console.log(error)
-
+            setVotes(0)
+            setIsTea(true)
+            setIsNotTea(true)
         })
     
     }
@@ -52,13 +58,12 @@ const ArticleVoting = (props) => {
 
             <p>Votes: {votes}</p>
 
-            {/* // Need to bring accross the original vote data and replace it with the votes here. */}
-
             <button onClick={handleUpVote} disabled={isTea}>That's the tea!</button>
 
             <button onClick={handleDownVote} disabled={isNotTea}>That's not the tea!</button>
 
-          
+            {error && <p>{error.message}. Tea went cold.</p>}
+
 
         </div>
 
@@ -68,6 +73,3 @@ const ArticleVoting = (props) => {
 
 export default ArticleVoting
 
-// This function needs a button the user can click when they want to add a vote to the article. 
-
-//The effects of this button needs to change the vote count of this article when the button is clicked.
