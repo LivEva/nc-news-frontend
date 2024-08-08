@@ -12,7 +12,6 @@ const ArticleVoting = (props) => {
     const[error, setError] = useState(false);
 
 
-
     const handleUpVote = () => {
 
 

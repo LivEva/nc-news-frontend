@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { welcomePage } from "../api"
-import { NavLink } from "react-router-dom";
+import Lottie from "lottie-react";
+import React from "react";
+import loading from '../loading-animation.json'
 
 const WelcomePage = () => {
 
@@ -19,7 +21,12 @@ const WelcomePage = () => {
 
     if(isLoading){
         <p>Opening the teashop...</p>
-    }
+            return <Lottie
+              animationData={loading}
+              loop={true}
+            />
+        
+      }
 
     return (
 
