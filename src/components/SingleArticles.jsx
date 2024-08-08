@@ -55,12 +55,14 @@ const SingleArticles = () => {
        <ArticleVoting votes={votes} setVotes={setVotes} article_id={article_id}/>
 
        <p>Comments: {article.comment_count}</p>
+
+       <AddComment setArticle={setArticle} comments={comments} setComments={setComments} />
    
        <div className="comments-container">
 
          <Comments article_id={article.article_id} comments={comments} setComments={setComments}/>
 
-         <AddComment setArticle={setArticle} comments={comments} setComments={setComments} />
+       
          
 
       </div>

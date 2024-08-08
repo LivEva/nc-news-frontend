@@ -11,20 +11,18 @@ const AddComment = ({setArticle, comments, setComments}) => {
     const[comment, setComment] = useState('');
     const[success, setSuccess] = useState(false);
 
+
     const handleName = (event) => {
 
         const value = event.target.value;
 
         setName(value)
 
-        // console.log(value)
     }
 
     const handleSubmit = (event) => {
     
         event.preventDefault();
-
-        // console.log({ name, comment })
 
         postComment(article_id, name, comment).then(({ data }) => {
 

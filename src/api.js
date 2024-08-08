@@ -8,7 +8,7 @@ const welcomePage = () => {
 
     return api.get(`/api`).then((response) => {
 
-        console.log(response)
+        console.log(response.data.endpoints)
 
         return response
     })
@@ -58,13 +58,10 @@ const changeVote = (article_id, votes, setError) => {
 
 const postComment = (article_id, username, body) => {
 
-    //check the backend to make sure you're writing the below object exactly how it is.
-
     const newComment = { username: username, body: body }
 
     return api.post(`/api/articles/${article_id}/comments`,
        newComment).then((response) => {
-
 
         return response;
 
@@ -75,5 +72,32 @@ const postComment = (article_id, username, body) => {
     })
 }
 
+const deleteComment = (comment_id) => {
 
-export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote, postComment }
+    return api.delete(`/api/comments/${comment_id}`).then(() => {
+
+        return true;
+
+
+    }).catch((error) => {
+
+        console.log(error)
+
+        return false;
+
+    })
+}
+
+
+// const getTopics = () => {
+
+//     return api.get(`/api/topics`).then((response) => {
+
+//         return response
+
+//     })
+// }
+
+
+
+export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote, postComment, deleteComment }
