@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react"
-import { getComments } from "../api"
-import AddComment from "./AddComment";
+import { deleteComment, getComments } from "../api"
+
 
 const Comments = ({article_id, comments, setComments}) => {
+
+    console.log(comments, "THIS IS THE COMMENTS")
 
 
     // const[comments, setComments] = useState([]);
     const[isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(null);
+    const[success, setSuccess] = useState(false);
+    const[deletedComment, setDeletedComment] = useState(null);
+
+    const username = 'grumpy19';
   
-
-
     useEffect(() => {
 
         getComments(article_id).then((commentsObject) => {
@@ -28,7 +32,33 @@ const Comments = ({article_id, comments, setComments}) => {
         })
     }, [article_id])
 
-  
+    const handleDelete = (comment_id) => {
+
+      deleteComment(comment_id).then((response) => {
+
+        console.log(response)
+
+        if(response){
+
+            const updatedComments = comments.filter((comm) => 
+
+                comm.comment_id !== comment_id
+
+            )
+
+        setSuccess(true)
+
+            setDeletedComment(comment_id)
+
+            setTimeout(() => setComments(updatedComments), 2000)
+
+            console.log(updatedComments)
+     
+        }
+
+      })
+
+    }
 
     if(isLoading){
         return <p>Gathering fellow tea drinkers...</p>
@@ -45,7 +75,11 @@ const Comments = ({article_id, comments, setComments}) => {
                 <h4>{comment.author}</h4>
                 <p>{comment.body}</p>
                 <p>votes: {comment.votes}</p>
-                
+
+                <button onClick={() => handleDelete(comment.comment_id)} disabled={username !== comment.author}>Delete Tea!</button>
+
+                {deletedComment === comment.comment_id && <p>Tea is deleted!</p>}
+
 
             </div>
         })}
