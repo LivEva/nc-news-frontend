@@ -3,6 +3,7 @@ import { getArticlesbyId } from '../api'
 import { Link, useParams } from "react-router-dom"
 import Comments from "./Comments";
 import ArticleVoting from "./ArticleVoting";
+import AddComment from "./AddComment";
 
 
 
@@ -13,6 +14,7 @@ const SingleArticles = () => {
     const[article, setArticle] = useState([])
     const[isLoading, setIsLoading] = useState(true)
     const[votes, setVotes] = useState();
+    const[comments, setComments] = useState([]);
 
     useEffect(() => {
 
@@ -34,7 +36,7 @@ const SingleArticles = () => {
     return (
         
 
-        <div id="single-article-container">
+<div id="single-article-container">
 
       <Link to={`/articles/${article_id}`} ></Link>
 
@@ -50,23 +52,21 @@ const SingleArticles = () => {
 
        <p>{article.body}</p>
 
-
        <ArticleVoting votes={votes} setVotes={setVotes} article_id={article_id}/>
-
-<br />
 
        <p>Comments: {article.comment_count}</p>
    
-
        <div className="comments-container">
 
-       <Comments article_id={article.article_id}/>
+         <Comments article_id={article.article_id} comments={comments} setComments={setComments}/>
 
+         <AddComment setArticle={setArticle} comments={comments} setComments={setComments} />
+         
 
-       </div>
+      </div>
       
         
-       </div>
+</div>
 
         
         

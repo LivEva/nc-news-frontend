@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 import { allArticles } from "../api"
 import ArticleCards from "./ArticleCards";
+import React from "react";
+import Lottie from "lottie-react";
+import loading from '../loading-animation.json'
+
+
 
 
 
@@ -20,7 +25,11 @@ const ArticlesList = () => {
     }, [])
 
     if(isLoading){
-        return <p>Brewing the tea...</p>
+        return <div>
+            <p>Brewing the tea...</p>
+           <Lottie animationData={loading} loop={true} />
+       </div>
+      
     }
 
     return (

@@ -11,7 +11,6 @@ const ArticleVoting = (props) => {
     const[isNotTea, setIsNotTea] = useState(false);
 
 
-
     const handleUpVote = () => {
 
         setVotes(votes + 1);
