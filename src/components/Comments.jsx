@@ -50,7 +50,7 @@ const Comments = ({article_id, comments, setComments}) => {
 
             setDeletedComment(comment_id)
 
-            setTimeout(() => setComments(updatedComments), 2000)
+            setTimeout(() => setComments(updatedComments), 1000)
 
             console.log(updatedComments)
      
@@ -87,9 +87,7 @@ const Comments = ({article_id, comments, setComments}) => {
 
         </div>
 
-
     )
-
 
 }
 

@@ -8,7 +8,7 @@ const welcomePage = () => {
 
     return api.get(`/api`).then((response) => {
 
-        console.log(response.data.endpoints)
+        console.log(response)
 
         return response
     })
@@ -30,6 +30,7 @@ const getArticlesbyId = (article_id) => {
     return api.get(`/api/articles/${article_id}`).then(({ data }) => {
 
         return data.article;
+        
     })
 }
 
@@ -58,7 +59,7 @@ const changeVote = (article_id, votes, setError) => {
 
 const postComment = (article_id, username, body) => {
 
-    const newComment = { username: username, body: body }
+    const newComment = { username: "grumpy19", body: body }
 
     return api.post(`/api/articles/${article_id}/comments`,
        newComment).then((response) => {
@@ -89,15 +90,28 @@ const deleteComment = (comment_id) => {
 }
 
 
-// const getTopics = () => {
+const getTopics = () => {
 
-//     return api.get(`/api/topics`).then((response) => {
+    return api.get(`/api/topics`).then(({ data }) => {
 
-//         return response
+        return data;
 
-//     })
-// }
+    })
+}
+
+const getSingleTopic = (topic) => {
+
+    return api.get(`/api/articles?topic=${topic}`).then((response) => {
+
+        return response.data;
+
+    }).catch((error) =>{
+
+        console.log(error)
+
+    })
+}
 
 
 
-export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote, postComment, deleteComment }
+export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote, postComment, deleteComment, getTopics, getSingleTopic}
