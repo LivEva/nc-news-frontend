@@ -1,5 +1,9 @@
+
 import Topics from "./Topics";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logo from '../assets/logo.png'
+
+
 
 const NavBar = () => {
 
@@ -7,12 +11,12 @@ const NavBar = () => {
 
     <nav id="navbar-container">
 
+        <NavLink to={`/articles`}> <img src={logo} id="logo"/></NavLink>
+
         <button className="nav-buttons"><Link to="/articles">Home</Link></button>
 
         <button className="nav-buttons"><Link to="/topics">Tea selection</Link></button>
-
      
-
     </nav>
 
   
@@ -20,4 +24,5 @@ const NavBar = () => {
 
 }
 
-export default NavBar;
+export default NavBar
+

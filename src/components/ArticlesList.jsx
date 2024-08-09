@@ -4,37 +4,46 @@ import ArticleCards from "./ArticleCards";
 import React from "react";
 import Lottie from "lottie-react";
 import loading from '../loading-animation.json'
-
-
+import SortBy from "./SortBy";
+import { useSearchParams } from "react-router-dom";
 
 const ArticlesList = () => {
 
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const[searchParams, setSearchParams] = useSearchParams();
+    const [sortByCriteria, setSortByCriteria] = useState('created_at');
+    const [sortOrder, setSortOrder] = useState('desc');
 
     useEffect(() => {
 
-        allArticles().then((articlesArray) => {
+        const sort_by = searchParams.get('sort_by') || 'created_at';
+        const order = searchParams.get('order') || 'desc';
+   
+        allArticles(sort_by, order).then((articlesArray) => {
 
             setArticles(articlesArray)
             setIsLoading(false)
 
         })
-    }, [])
+    }, [searchParams])
 
     if(isLoading){
-        return <div>
-            <p>Brewing the tea...</p>
-           <Lottie animationData={loading} loop={true} />
+        return <div className="loading-teacup">
+        
+           <Lottie animationData={loading} loop={true} id="teacup"/>
+           <p>Brewing the tea...</p>
        </div>
       
     }
 
     return (
 
-    
-        <div className="articles-container">
+    <div>
 
+        <SortBy setSearchParams={setSearchParams} setSortByCriteria={setSortByCriteria} setSortOrder={setSortOrder} sortByCriteria={sortByCriteria} sortOrder={sortOrder} />
+
+        <div className="articles-container">
 
         {articles.map((article) => {
 
@@ -44,6 +53,8 @@ const ArticlesList = () => {
         })}
         
         </div>
+        </div>
+
     
     )
 
