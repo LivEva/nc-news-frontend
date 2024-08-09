@@ -7,8 +7,6 @@ import loading from '../loading-animation.json'
 
 
 
-
-
 const ArticlesList = () => {
 
     const [articles, setArticles] = useState([]);
@@ -36,8 +34,7 @@ const ArticlesList = () => {
 
     
         <div className="articles-container">
-    
-    {/* nav bar, logo and title would go here */}
+
 
         {articles.map((article) => {
 

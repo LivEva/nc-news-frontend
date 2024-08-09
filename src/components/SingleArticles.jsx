@@ -20,7 +20,7 @@ const SingleArticles = () => {
 
         getArticlesbyId(article_id).then((response) => {
 
-          
+
             setVotes(response.votes)
             setArticle(response)
             setIsLoading(false)
@@ -62,8 +62,6 @@ const SingleArticles = () => {
 
          <Comments article_id={article.article_id} comments={comments} setComments={setComments}/>
 
-       
-         
 
       </div>
       

@@ -1,3 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 h1 {
 
   font-size: 40px;
@@ -53,14 +57,6 @@ h1 {
 }
 
 
-
-/* .articles-list {
-
-  flex: 1 1 calc(33.333% - 20px); 
-  box-sizing: border-box; 
-  
-} */
-
 #articles-list-buttons{
 
   background-color:aliceblue;
@@ -108,26 +104,13 @@ h1 {
 
 #logo{
 
-  width: 200px;
+  width: 250px;
   display: flex;
-  justify-content: center;
-  padding: 20px;
+  padding: 30px;
   margin: 20px;
   
 }
 
-
-#button-container{
-
- 
-  padding: 20px;
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-
-}
 
 #massive-cupoftea{
 
@@ -143,7 +126,41 @@ h1 {
   
 }
 
+.header{
 
+  display: flex;
+
+}
+
+
+#topic-cards{
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(93, 123, 171);
+  border-radius: 100px;
+  margin: 1em;
+
+
+}
+
+#navbar-container{
+
+  margin: 200px;
+  background-color: rgb(115, 146, 179);
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.nav-buttons{
+
+  padding: 20px;
+  margin: 20px;
+}
 
 
 

@@ -12,13 +12,7 @@ const AddComment = ({setArticle, comments, setComments}) => {
     const[success, setSuccess] = useState(false);
 
 
-    const handleName = (event) => {
-
-        const value = event.target.value;
-
-        setName(value)
-
-    }
+  
 
     const handleSubmit = (event) => {
     
@@ -49,11 +43,6 @@ const AddComment = ({setArticle, comments, setComments}) => {
         <div>
 
         <form className="form">
-
-            <label htmlFor="username">
-                username
-             <input onChange={handleName}type="text" name="username"/>
-             </label>
 
              <label htmlFor="comment">
                 comment
