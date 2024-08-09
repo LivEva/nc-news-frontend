@@ -15,9 +15,11 @@ const welcomePage = () => {
 
 }
 
-const allArticles = () => {
+const allArticles = (sort_by, order) => {
 
-    return api.get("/api/articles").then(({ data }) => {
+    return api.get("/api/articles", {params: {sort_by, order}}).then(({ data }) => {
+
+        console.log(sort_by, order)
 
         return data.articles;
 
@@ -114,4 +116,6 @@ const getSingleTopic = (topic) => {
 
 
 
-export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote, postComment, deleteComment, getTopics, getSingleTopic}
+
+
+export { allArticles, getArticlesbyId, welcomePage, getComments, changeVote, postComment, deleteComment, getTopics, getSingleTopic }

@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react"
 import { deleteComment, getComments } from "../api"
+import { Accordion, AccordionSummary, AccordionDetails, Typography, Button } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 const Comments = ({article_id, comments, setComments}) => {
 
-    console.log(comments, "THIS IS THE COMMENTS")
-
-
-    // const[comments, setComments] = useState([]);
     const[isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(null);
     const[success, setSuccess] = useState(false);
@@ -23,7 +21,6 @@ const Comments = ({article_id, comments, setComments}) => {
             setIsLoading(false)
 
 
-
         }) .catch((error) => {
 
             setIsError(error)
@@ -35,8 +32,6 @@ const Comments = ({article_id, comments, setComments}) => {
     const handleDelete = (comment_id) => {
 
       deleteComment(comment_id).then((response) => {
-
-        console.log(response)
 
         if(response){
 
@@ -51,8 +46,6 @@ const Comments = ({article_id, comments, setComments}) => {
             setDeletedComment(comment_id)
 
             setTimeout(() => setComments(updatedComments), 1000)
-
-            console.log(updatedComments)
      
         }
 
@@ -66,7 +59,7 @@ const Comments = ({article_id, comments, setComments}) => {
 
     return (
 
-        <div>
+      <>
 
         {comments.map((comment) => {
 
@@ -85,7 +78,7 @@ const Comments = ({article_id, comments, setComments}) => {
         })}
 
 
-        </div>
+           </>
 
     )
 

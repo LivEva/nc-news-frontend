@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTopics } from "../api";
 import TopicCards from "./TopicCards";
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 const Topics = () => {
 
@@ -20,7 +20,7 @@ const Topics = () => {
 
     return (
 
-        <div>
+<div>
 
             <h1>Tea Selection</h1>
          
@@ -34,8 +34,8 @@ const Topics = () => {
 
             })}
 
-        
-        </div>
+</div>
+      
     )
 
 }
