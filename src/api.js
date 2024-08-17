@@ -1,5 +1,5 @@
 import axios from "axios"
-import React from "react"
+
 
 const api = axios.create({baseURL: "https://be-nc-news-lhaf.onrender.com"});
 
@@ -8,9 +8,12 @@ const welcomePage = () => {
 
     return api.get(`/api`).then((response) => {
 
-        console.log(response)
-
         return response
+        
+    }).catch((error) => {
+
+    console.log(error)
+
     })
 
 }
@@ -19,12 +22,13 @@ const allArticles = (sort_by, order) => {
 
     return api.get("/api/articles", {params: {sort_by, order}}).then(({ data }) => {
 
-        console.log(sort_by, order)
-
         return data.articles;
 
+    }).catch((error) => {
 
-    })
+        throw error;
+    
+        })
 }
 
 const getArticlesbyId = (article_id) => {
@@ -33,7 +37,13 @@ const getArticlesbyId = (article_id) => {
 
         return data.article;
         
-    })
+    }).catch((error) => {
+
+        console.log(error)
+
+        throw error;
+
+        })
 }
 
 const getComments = (article_id) => {
@@ -41,10 +51,15 @@ const getComments = (article_id) => {
     return api.get(`/api/articles/${article_id}/comments`).then(({ data }) => {
 
         return data;
-    })
+        
+    }).catch((error) => {
+
+        console.log(error)
+    
+        })
 }
 
-const changeVote = (article_id, votes, setError) => {
+const changeVote = (article_id, votes) => {
 
     const voteInfo = {inc_votes: votes}
 
@@ -54,7 +69,7 @@ const changeVote = (article_id, votes, setError) => {
 
     }).catch((error) => {
 
-       setError(error)
+     console.log(error)
 
     })
 }
@@ -91,12 +106,15 @@ const deleteComment = (comment_id) => {
     })
 }
 
-
 const getTopics = () => {
 
     return api.get(`/api/topics`).then(({ data }) => {
 
         return data;
+
+    }).catch((error) => {
+
+    console.log(error)
 
     })
 }
@@ -110,6 +128,8 @@ const getSingleTopic = (topic) => {
     }).catch((error) =>{
 
         console.log(error)
+
+        throw error;
 
     })
 }

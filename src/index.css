@@ -141,6 +141,14 @@ h1 {
 
 }
 
+#error{
+
+  width: 500px;
+  background-color: bisque;
+  display: flex;
+
+ 
+}
 
 
 

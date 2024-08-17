@@ -1,8 +1,6 @@
 import { useState } from "react"
 import { changeVote } from "../api";
 
-
-
 const ArticleVoting = (props) => {
 
     const { article_id, votes, setVotes } = props;
@@ -30,7 +28,6 @@ const ArticleVoting = (props) => {
             setIsNotTea(true)
         })
     
-
     }
 
     const handleDownVote = () => {
