@@ -1,47 +1,59 @@
+import React from 'react';
+import { FormControl, InputLabel, Select, MenuItem, Button, Box } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
 const SortBy = (props) => {
+  const { setSearchParams, setSortByCriteria, setSortOrder, sortByCriteria, sortOrder } = props;
 
-    const { setSearchParams, setSortByCriteria, setSortOrder, sortByCriteria, sortOrder} = props;
-    
-    const handleSortBy = (event) => {
+  const handleSortBy = (event) => {
+    const value = event.target.value;
+    setSortByCriteria(value);
+    setSearchParams({ sort_by: value, order: sortOrder });
+  };
 
-        const value = event.target.value;
+  const handleOrderBy = () => {
+    const newOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+    setSortOrder(newOrder);
+    setSearchParams({ sort_by: sortByCriteria, order: newOrder });
+  };
 
-        setSortByCriteria(value)
+  return (
 
-        setSearchParams({ sort_by: value, order: sortOrder });
+    <div className='sortby-container'>
 
-    }
 
-    const handleOrderBy = () => {
+    <Box display="flex" alignItems="center" gap={2}>
+      <FormControl variant="outlined" size="small">
+        <InputLabel id="sort-by-label">Sort By</InputLabel>
+        <Select
+          labelId="sort-by-label"
+          id="sort-by"
+          value={sortByCriteria}
+          onChange={handleSortBy}
+          label="Sort By"
+        >
+          <MenuItem value="created_at">Date</MenuItem>
+          <MenuItem value="comment_count">Comments</MenuItem>
+          <MenuItem value="votes">Votes</MenuItem>
+        </Select>
+      </FormControl>
 
-        const newOrder = sortOrder === "asc" ? "desc" : "asc"
+      <Button
+        variant="contained"
+        onClick={handleOrderBy}
+        startIcon={sortOrder === 'asc' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />}
+        size="small"
+      >
+        {sortOrder === 'asc' ? 'Asc' : 'Desc'}
+      </Button>
+    </Box>
 
-        setSortOrder(newOrder)
-
-        setSearchParams({ sort_by: sortByCriteria, order: newOrder });
-
-    }
-
-    return (
-
-    <div>
-
-    <select name="sort" id="sort-by" onChange={handleSortBy}value={sortByCriteria}>sort
-    <option value="created_at">date</option>
-    <option value="comment_count">comments</option>
-    <option value="votes">votes</option>
-    </select>
-
-    <select name="order" id="order-by" onChange={handleOrderBy}>
-    <option value="asc">asc</option>
-    <option value="desc">desc</option>
-
-    </select>
-    
     </div>
+  );
+};
 
-    )
 
-}
+
 
 export default SortBy
