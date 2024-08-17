@@ -10,13 +10,17 @@ const AddComment = ({setArticle, comments, setComments}) => {
     const[name, setName] = useState('');
     const[comment, setComment] = useState('');
     const[success, setSuccess] = useState(false);
+    const[error, setError] = useState('');
 
-
-  
 
     const handleSubmit = (event) => {
     
         event.preventDefault();
+
+        if(comment.trim() === ''){
+            setError('please enter comment');
+            return;
+        }
 
         postComment(article_id, name, comment).then(({ data }) => {
 
@@ -44,16 +48,17 @@ const AddComment = ({setArticle, comments, setComments}) => {
 
         <form className="form">
 
-             <label htmlFor="comment">
-                comment
+          
+               
              <input onChange={handleComment}type="text"name="comment"/>
-             </label>
+         
 
              <button onClick={handleSubmit} type="text" name="submit">add comment</button>
 
         </form>
 
         {success ? <p>Tea has been served!</p> : null}
+        {error && <p>{error}</p>}
 
         </div>
 

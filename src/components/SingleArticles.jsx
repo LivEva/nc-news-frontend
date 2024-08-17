@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom"
 import Comments from "./Comments";
 import ArticleVoting from "./ArticleVoting";
 import AddComment from "./AddComment";
-
+import Alert from '@mui/material/Alert';
 
 
 const SingleArticles = () => {
@@ -15,22 +15,57 @@ const SingleArticles = () => {
     const[isLoading, setIsLoading] = useState(true)
     const[votes, setVotes] = useState();
     const[comments, setComments] = useState([]);
+    const[error, setError] = useState(null);
 
     useEffect(() => {
 
-        getArticlesbyId(article_id).then((response) => {
+        getArticlesbyId(article_id, setError).then((response) => {
 
+            if(response){
 
-            setVotes(response.votes)
-            setArticle(response)
+                setVotes(response.votes)
+                setArticle(response)
+                setIsLoading(false)
+
+            }
+
+            setIsLoading(false)
+            
+        }).catch((error) => {
+
+            setError(error)
             setIsLoading(false)
 
-            
         })
     }, [article_id])
 
     if(isLoading){
         return <p>Tea selected... boiling the water...</p>
+    }
+
+    if(error){
+
+        const errorType = error.response.status;
+
+        if(errorType === 404){
+
+            return  <Alert variant="filled" severity="error" id='error'><p style={{ color: 'red' }}>{error.response.status} error code: We don't have this tea, please try a different one.</p></Alert>
+
+        }
+
+        else if(errorType === 400){
+
+            return <Alert variant="filled" severity="error" id='error'><p style={{ color: 'red' }}>{error.response.status} error code: Bad request for tea. Please check input.</p></Alert>
+
+        }
+        else{
+
+            return <Alert variant="filled" severity="error" id='error'><p style={{ color: 'red' }}>There seems to be an error. Please try again later.</p></Alert>
+
+        }
+
+       
+
     }
 
     return (
@@ -62,18 +97,11 @@ const SingleArticles = () => {
 
          <Comments article_id={article.article_id} comments={comments} setComments={setComments}/>
 
-
       </div>
-      
-        
+
 </div>
-
         
-        
-
     )
-
-
 }
 
 export default SingleArticles
