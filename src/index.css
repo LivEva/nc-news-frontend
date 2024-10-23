@@ -5,7 +5,8 @@
 
 body, html{
 
-    margin: 0; /* */
+    margin: 0; /* This ensures the whole page fills */
     padding: 0;
-    
+    background-color: rgb(235, 191, 132);
+  
 }

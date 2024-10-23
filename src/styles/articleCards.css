@@ -1,0 +1,49 @@
+
+
+/* The flex container for the cards */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Each article card */
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px; /* Allow the card to grow and shrink */
+    flex-shrink: 1; /* Card can shrink when necessary */
+    padding: 16px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .article-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .article-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  /* Responsive shrinking */
+  @media (max-width: 768px) {
+    .article-card {
+      flex: 1 1 100%; 
+    }
+  }
+
+  .article-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), /* Existing shadow */
+                0 0 15px 5px rgba(10, 10, 3, 0.7); /* Yellow glow */
+}
+  

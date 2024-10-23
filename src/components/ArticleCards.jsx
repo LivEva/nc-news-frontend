@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../styles/articleCards.css'
 
 const ArticleCards = (props) => {
 
@@ -6,7 +7,7 @@ const ArticleCards = (props) => {
 
     return (
 
-        <section id="article-card" >
+        <section className="article-card" >
 
         <Link to={`/articles/${article.article_id}`}>
 

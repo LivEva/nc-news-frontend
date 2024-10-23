@@ -7,6 +7,7 @@ import loading from '../loading-animation.json'
 import SortBy from "./SortBy";
 import { useSearchParams } from "react-router-dom";
 import Alert from '@mui/material/Alert';
+import '../styles/articleList.css'
 
 const ArticlesList = () => {
 
@@ -15,7 +16,7 @@ const ArticlesList = () => {
     const[searchParams, setSearchParams] = useSearchParams();
     const [sortByCriteria, setSortByCriteria] = useState('created_at');
     const [sortOrder, setSortOrder] = useState('desc');
-    const [error, setError] = useState(null);//changed from false
+    const [error, setError] = useState(null);
 
     useEffect(() => {
 
