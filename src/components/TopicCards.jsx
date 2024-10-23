@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../styles/topics.css'
 
 const TopicCards = (props) => {
 
@@ -6,7 +7,7 @@ const TopicCards = (props) => {
 
     return (
 
-        <section id="topic-cards">
+        <div className="topics-card">
 
             <Link to={`/topics/${topic.slug}`}>
 
@@ -17,7 +18,7 @@ const TopicCards = (props) => {
             <p>{topic.description}</p>
             
         
-        </section>
+        </div>
         
     )
 }

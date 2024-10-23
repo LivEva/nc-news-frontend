@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTopics } from "../api";
 import TopicCards from "./TopicCards";
 import React from "react";
-
+import '../styles/topics.css'
 
 const Topics = () => {
 
@@ -33,12 +33,14 @@ const Topics = () => {
 
     return (
 
+        <div>
 
-<div>
+             <h1 className="topics-title">Tea Selection</h1>
 
-            <h1>Tea Selection</h1>
+         <div className="topics-container">
 
-         
+            <div className="topic-card">
+
             {topics.map((topic, index) => {
              
              return <ul key={index}>
@@ -49,6 +51,10 @@ const Topics = () => {
             
 
             })}
+
+</div>
+
+</div>
 
     
       
