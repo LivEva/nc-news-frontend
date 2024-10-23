@@ -2,9 +2,8 @@
 
     display: flex;
     flex-wrap: wrap;
-    background-color: antiquewhite;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-    
+   
 }

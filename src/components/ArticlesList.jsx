@@ -30,6 +30,8 @@ const ArticlesList = () => {
             setArticles(articlesArray)
             setIsLoading(false)
 
+            console.log(articlesArray)
+
         }).catch((error) => {
 
             setError(error)
@@ -44,7 +46,7 @@ const ArticlesList = () => {
         return <div className="loading-teacup">
         
            <Lottie animationData={loading} loop={true} id="teacup"/>
-           <p>Brewing the tea...</p>
+           
        </div>
       
     }

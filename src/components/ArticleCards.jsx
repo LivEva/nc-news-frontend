@@ -7,16 +7,17 @@ const ArticleCards = (props) => {
 
     return (
 
-        <section className="article-card" >
+        <div className="article-card" >
 
         <Link to={`/articles/${article.article_id}`}>
 
             <h2>{article.title}</h2>
             <img src={article.article_img_url} />
+            <p className="author">Written  by {article.author}</p>
 
         </Link>
 
-        </section>
+        </div>
 
     )
 

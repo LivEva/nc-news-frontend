@@ -1,0 +1,16 @@
+.sortby-container{
+
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+   
+
+}
+
+@media (max-width: 768px) {
+    .sortby-container {
+      flex: 1 1 100%; /* Cards take full width */
+      min-height: 300px; /* Adjust card height for smaller screens */
+    }
+  }
+  

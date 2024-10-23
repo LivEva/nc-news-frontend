@@ -2,6 +2,7 @@ import React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Button, Box } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import '../styles/sortby.css'
 
 const SortBy = (props) => {
   const { setSearchParams, setSortByCriteria, setSortOrder, sortByCriteria, sortOrder } = props;
