@@ -11,16 +11,11 @@ import Footer from './components/main/Footer';
 
 function App() {
 
-
-
   return (
 
 <>
 
-
-
 <div className='header'>
-  
 
 <NavBar />
 
