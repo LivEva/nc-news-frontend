@@ -23,7 +23,7 @@ const SortBy = (props) => {
 
     <div className='sortby-container'>
 
-
+{/* the sort by box */}
     <Box display="flex" alignItems="center" gap={2}>
       <FormControl variant="outlined" size="small">
         <InputLabel id="sort-by-label">Sort By</InputLabel>
@@ -40,7 +40,10 @@ const SortBy = (props) => {
         </Select>
       </FormControl>
 
+
+{/* The desc and asc box */}
       <Button
+        id='order'
         variant="contained"
         onClick={handleOrderBy}
         startIcon={sortOrder === 'asc' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />}
