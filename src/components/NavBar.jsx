@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import logo from '../assets/logo.png';
+import Lottie from "lottie-web";
+import teacup from '../icons/teacup.json'
 
 const NavBar = () => {
     const navigate = useNavigate();
@@ -21,6 +22,7 @@ const NavBar = () => {
 
                     </Button>
                     
+
                 {/* Navigation Buttons */}
                 </Box>
                 <Box>
