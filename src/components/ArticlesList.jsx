@@ -4,10 +4,12 @@ import ArticleCards from "./ArticleCards";
 import React from "react";
 import Lottie from "lottie-react";
 import loading from '../loading-animation.json'
+import teacup from '../icons/teacup.json'
 import SortBy from "./SortBy";
 import { useSearchParams } from "react-router-dom";
 import Alert from '@mui/material/Alert';
 import '../styles/articleList.css'
+import '../styles/loading.css'
 
 const ArticlesList = () => {
 
@@ -45,7 +47,7 @@ const ArticlesList = () => {
     if(isLoading){
         return <div className="loading-teacup">
         
-           <Lottie animationData={loading} loop={true} id="teacup"/>
+           <Lottie animationData={teacup} loop={true} id="teacup"/>
            
        </div>
       

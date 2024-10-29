@@ -1,0 +1,13 @@
+#teacup{
+    
+    width: 50%;
+    margin: 30px;
+   
+}
+
+.loading-teacup{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
