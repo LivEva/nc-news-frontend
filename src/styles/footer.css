@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&display=swap');
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+
+  display: flex;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: 'Bebas Neue';
+}
+
+.icons{
+
+  width: 50px;
+
+}
+
+.social-media-icons{
+
+  display: flex;
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 2px;
+  padding-top: 6px;
+  border-radius: 10px;
+
+}
+
+.icons:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}

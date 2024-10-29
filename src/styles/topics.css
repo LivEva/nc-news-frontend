@@ -2,36 +2,38 @@
 .topics-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the cards horizontally */
-    align-items: center; /* Center cards vertically in the container */
-    gap: 20px; /* Space between the cards */
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
     padding: 20px;
   }
   
-  /* Individual card styling */
+
   .topics-card {
     display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    justify-content: center; /* Center the content vertically inside the card */
-    align-items: center; /* Center content horizontally */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
     padding: 16px;
     margin: 10px;
-    width: 300px; /* Fixed width for each card */
+    width: 300px;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Ensure text is centered */
+    text-align: center; 
   }
   
-  /* Link styling (remove underline) */
+ 
   .topics-card a {
     text-decoration: none;
-    color: #0073e6; /* Optional: Change the link color */
+    color: #0073e6; 
   }
   
-  /* Optional: Add some hover effect */
+
+
   .topics-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05); 
+    
     transition: transform 0.2s ease-in-out;
   }
 

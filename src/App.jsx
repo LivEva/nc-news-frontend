@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Topics from './components/Topics';
 import SingleTopic from './components/SingleTopic';
+import Footer from './components/main/Footer';
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         <Route path="/topics/:topic" element={<SingleTopic />}></Route>
 
      </Routes>
+
+     <Footer />
 
 </>
 
