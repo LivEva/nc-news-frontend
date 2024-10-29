@@ -33,13 +33,12 @@ const Topics = () => {
 
     return (
 
-        <div>
+        <div className="whole-container">
 
              <h1 className="topics-title">Tea Selection</h1>
 
          <div className="topics-container">
 
-            <div className="topic-card">
 
             {topics.map((topic, index) => {
              
@@ -52,7 +51,7 @@ const Topics = () => {
 
             })}
 
-</div>
+
 
 </div>
 
