@@ -50,13 +50,17 @@ const ArticleVoting = (props) => {
 
     return (
 
-        <div id="votes-button">
+        <div className="voting-container">
 
             <p>Votes: {votes}</p>
+
+            <div className="voting-buttons">
 
             <button onClick={handleUpVote} disabled={isTea}>That's the tea!</button>
 
             <button onClick={handleDownVote} disabled={isNotTea}>That's not the tea!</button>
+
+            </div>
 
             {error && <p>{error.message}. Tea went cold.</p>}
 

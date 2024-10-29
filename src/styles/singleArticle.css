@@ -1,0 +1,60 @@
+.single-article-container{
+
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+
+#single-article-img{
+
+    width: 80%;
+}
+
+.article-body{
+    margin: 30px;
+}
+
+.comments-container{
+    text-align: start;
+    background-color: rgb(222, 239, 241);
+    padding: 10px;
+    margin-top: 20px;
+    
+}
+
+.content h2{
+    font-size: 3rem;
+}
+
+.author-and-date{
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.voting-container{
+
+    display: flex;
+    align-items: baseline;
+    gap: 100px;
+    
+
+}
+
+.voting-buttons{
+    display: flex;
+    justify-content: end;
+   
+   
+}
+
+
+

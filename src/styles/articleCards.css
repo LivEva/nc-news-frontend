@@ -6,7 +6,7 @@
   justify-content: space-between;
   flex: 1 1 300px;
   min-height: 350px; /* Set minimum height for equal card height */
-  padding: 16px;
+  padding: 20px;
   padding-bottom: 0;
   border: 1px solid #ddd;
   background-color: #b2cbe7;
@@ -56,6 +56,17 @@
   
  
 }
+
+.article-card :hover{
+
+  transform: scale(1.02); 
+    
+ transition: transform 0.2s ease-in-out;
+
+
+}
+
+
 
 
 

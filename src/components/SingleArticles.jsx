@@ -5,6 +5,7 @@ import Comments from "./Comments";
 import ArticleVoting from "./ArticleVoting";
 import AddComment from "./AddComment";
 import Alert from '@mui/material/Alert';
+import '../styles/singleArticle.css'
 
 
 const SingleArticles = () => {
@@ -71,33 +72,43 @@ const SingleArticles = () => {
     return (
         
 
-<div id="single-article-container">
+<div className="single-article-container">
 
       <Link to={`/articles/${article_id}`} ></Link>
 
-       <h2>{article.title}</h2>
-       
-       <p>{article.topic}</p>
+    <div className="content">
 
-       <img src={article.article_img_url} id="single-article-img" />
+            <img src={article.article_img_url} id="single-article-img" />
 
-       <p>Author: {article.author}</p>
+            <h2>{article.title}</h2>
 
-       <p>Published: {article.created_at}</p>
+            <p className="article-body">{article.body}</p>
 
-       <p>{article.body}</p>
+    <div className="author-and-date">
 
-       <ArticleVoting votes={votes} setVotes={setVotes} article_id={article_id}/>
+            <p>Author: {article.author}</p>
 
-       <p>Comments: {article.comment_count}</p>
+            <p>Published: {article.created_at}</p>
 
-       <AddComment setArticle={setArticle} comments={comments} setComments={setComments} />
-   
-       <div className="comments-container">
+    </div>
 
-         <Comments article_id={article.article_id} comments={comments} setComments={setComments}/>
+    <div className="voting-container">
+        
+            <ArticleVoting votes={votes} setVotes={setVotes} article_id={article_id}/>
 
-      </div>
+    </div>
+
+    <div className="comments-container">
+
+            <p>Comments: {article.comment_count}</p>
+
+            <AddComment setArticle={setArticle} comments={comments} setComments={setComments} />
+
+            <Comments article_id={article.article_id} comments={comments} setComments={setComments}/>
+
+    </div>
+
+    </div>
 
 </div>
         
