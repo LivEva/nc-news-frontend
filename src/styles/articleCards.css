@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Cedarville+Cursive&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* Each card is a flexbox container to ensure equal height */
 .article-card {
   display: flex;
@@ -40,6 +40,8 @@
   overflow: hidden;
   white-space: nowrap; /* Prevents text from wrapping */
   text-overflow: ellipsis; /* Adds ... for long titles */
+  font-family: 'Alegreya';
+  font-size: 1.5em;
   
 }
 
@@ -49,9 +51,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Alegreya';
+  font-size: 1em;
   
  
 }
+
 
 
 

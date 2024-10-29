@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bebas+Neue&family=Cedarville+Cursive&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
 html, body {
@@ -15,26 +15,7 @@ footer {
   text-align: center;
   align-items: baseline;
   justify-content: space-between;
-  font-family: 'Bebas Neue';
-}
-
-.icons{
-
-  width: 50px;
-
-}
-
-.social-media-icons{
-
-  display: flex;
-  gap: 10px;
-  background-color: rgb(255, 255, 255);
-  padding: 2px;
-  padding-top: 6px;
-  border-radius: 10px;
-
-}
-
-.icons:hover {
-  transform: scale(1.05); /* Scale up on hover */
+  font-family: 'Alegreya';
+  font-size: 1em;
+  bottom: 0;
 }
