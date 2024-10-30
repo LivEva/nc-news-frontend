@@ -82,15 +82,16 @@ const SingleArticles = () => {
 
             <h2>{article.title}</h2>
 
-            <p className="article-body">{article.body}</p>
+            <div className="author-and-date">
 
-    <div className="author-and-date">
+                <p>Author: {article.author}</p>
 
-            <p>Author: {article.author}</p>
-
-            <p>Published: {article.created_at}</p>
+                <p>Published: {article.created_at}</p>
 
     </div>
+
+            <p className="article-body">{article.body}</p>
+
 
     <div className="voting-container">
         

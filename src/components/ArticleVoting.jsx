@@ -2,6 +2,7 @@ import { useState } from "react"
 import { changeVote } from "../api";
 import thumbsUp from '../assets/thumbsUp.png'
 import thumbsDown from '../assets/thumbsDown.png'
+import '../styles/voting.css'
 
 const ArticleVoting = (props) => {
 
@@ -53,33 +54,23 @@ const ArticleVoting = (props) => {
     return (
 
         <div className="voting-container">
-
-            <p>Votes: {votes}</p>
-
-            <div className="voting-buttons">
-
-            <button img onClick={handleUpVote} disabled={isTea}> 
-
-                <img className="voting-buttons" src={thumbsUp} />
-
+        <p className="votes-count">Votes: {votes}</p>
+    
+        <div className="voting-buttons">
+            <button className="vote-button" onClick={handleUpVote} disabled={isTea}>
+                <img className="icon" src={thumbsUp} alt="Thumbs up" />
                 That's the tea!
-            
             </button>
-
-            <button onClick={handleDownVote} disabled={isNotTea}> 
-
-            <img className="voting-buttons" src={thumbsDown} />
-
-            That's not the tea!
-
+    
+            <button className="vote-button" onClick={handleDownVote} disabled={isNotTea}>
+                <img className="icon" src={thumbsDown} alt="Thumbs down" />
+                That's not the tea!
             </button>
-
-            </div>
-
-            {error && <p>{error.message}. Tea went cold.</p>}
-
-
         </div>
+    
+        {error && <p className="error-message">{error.message}. Tea went cold.</p>}
+    </div>
+    
 
     )
 
