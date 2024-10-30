@@ -1,38 +1,21 @@
-/* Flexbox container for the cards */
-body, html{
-  margin: 0;
-  padding: 0;
-}
-
-.topics-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly; 
-    align-items: center; 
-    gap: 10px; 
-    padding: 20px;
-   
-   
-  }
-  
 
   .topics-card {
-   
+  
     padding: 10px;
     width: 300px;
     border: 2px solid #fbf3f3;
     background-color: #f9f9f9;
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
     text-align: center; 
+    
   }
   
  
   .topics-card a {
     text-decoration: none;
-    color: #0073e6; 
+    color: #000000; 
   }
   
-
 
   .topics-card:hover {
     transform: scale(1.05); 
@@ -40,24 +23,31 @@ body, html{
   }
 
   .topics-title{
-
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
-    
-    padding: 10px;
+    padding: 10px; 
+  }
+
+  .topics-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
   
-    
   }
 
   .whole-container{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    width: 100vw;
   }
+
+ 
+
+ 
+
+
+ 
   

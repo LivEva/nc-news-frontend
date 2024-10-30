@@ -9,14 +9,18 @@ body, html{
 
     margin: 0; /* This ensures the whole page fills */
     padding: 0;
+  
+}
+
+body{
+
     background-color: #dbe4ef;
     background-image: url('./assets/teacup-backing.png');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
-  
+
 }
 
 h1{
