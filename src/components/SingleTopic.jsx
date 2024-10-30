@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getSingleTopic } from "../api";
 import ArticleCards from "./ArticleCards";
 import Alert from '@mui/material/Alert';
+import '../styles/topics.css'
 
 
 const SingleTopic = () => {
@@ -40,7 +41,7 @@ const SingleTopic = () => {
 
         <div>
 
-           <h1>{topic.charAt(0).toUpperCase() + topic.slice(1)}</h1>
+           <h1 className="topics-title">{topic.charAt(0).toUpperCase() + topic.slice(1)}</h1>
 
         <div className="articles-container">
 

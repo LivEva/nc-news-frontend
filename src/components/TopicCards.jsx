@@ -15,9 +15,9 @@ const TopicCards = (props) => {
 
             <h2>{topicTitle}</h2>
 
-            </Link>
-
             <p>{topic.description}</p>
+
+            </Link>
             
         </div>
         

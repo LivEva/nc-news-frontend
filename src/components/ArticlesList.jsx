@@ -3,7 +3,6 @@ import { allArticles } from "../api"
 import ArticleCards from "./ArticleCards";
 import React from "react";
 import Lottie from "lottie-react";
-import loading from '../loading-animation.json'
 import teacup from '../icons/teacup.json'
 import SortBy from "./SortBy";
 import { useSearchParams } from "react-router-dom";
