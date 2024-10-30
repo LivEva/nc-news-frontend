@@ -10,6 +10,7 @@
     text-align: center;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
 
+
 }
 
 
@@ -28,6 +29,7 @@
     background-color: rgb(222, 239, 241);
     padding: 10px;
     margin-top: 20px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
     
 }
 
@@ -45,21 +47,56 @@
     flex-wrap: wrap;
 }
 
-.voting-container{
-
+.voting-container {
     display: flex;
-    align-items: baseline;
-    gap: 100px;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+    background-color: rgb(222, 239, 241);
+  }
+  
+  .voting-container p {
+    /* Aligns the paragraph to the left (start) */
+    font-size: 2rem;
+    margin: 0;
+    
+  }
+
+.voting-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+    gap: 10px;
+    
+    
+}
+
+.voting-buttons button{
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: transparent;
+    border: none;
+    
+   
+   
+}
+
+.voting-buttons button :hover{
+    transform: scale(1.2); 
+    transition: transform 0.2s ease-in-out;
     
 
 }
 
-.voting-buttons{
-    display: flex;
-    justify-content: end;
-   
-   
-}
+
+
+
 
 
 

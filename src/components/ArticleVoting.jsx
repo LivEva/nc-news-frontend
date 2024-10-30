@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { changeVote } from "../api";
+import thumbsUp from '../assets/thumbsUp.png'
+import thumbsDown from '../assets/thumbsDown.png'
 
 const ArticleVoting = (props) => {
 
@@ -56,9 +58,21 @@ const ArticleVoting = (props) => {
 
             <div className="voting-buttons">
 
-            <button onClick={handleUpVote} disabled={isTea}>That's the tea!</button>
+            <button img onClick={handleUpVote} disabled={isTea}> 
 
-            <button onClick={handleDownVote} disabled={isNotTea}>That's not the tea!</button>
+                <img className="voting-buttons" src={thumbsUp} />
+
+                That's the tea!
+            
+            </button>
+
+            <button onClick={handleDownVote} disabled={isNotTea}> 
+
+            <img className="voting-buttons" src={thumbsDown} />
+
+            That's not the tea!
+
+            </button>
 
             </div>
 
