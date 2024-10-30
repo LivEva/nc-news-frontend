@@ -11,6 +11,7 @@ import Alert from '@mui/material/Alert';
 import '../styles/articleList.css'
 import '../styles/loading.css'
 
+
 const ArticlesList = () => {
 
     const [articles, setArticles] = useState([]);
@@ -31,8 +32,6 @@ const ArticlesList = () => {
 
             setArticles(articlesArray)
             setIsLoading(false)
-
-            console.log(articlesArray)
 
         }).catch((error) => {
 
@@ -59,18 +58,18 @@ const ArticlesList = () => {
 
         if(errorType === 404){
 
-            return  <Alert variant="filled" severity="error" id='error'><p style={{ color: 'red' }}>{error.response.status} error code: Cannot find collection of tea. Please check input.</p></Alert>
+            return  <Alert variant="filled" severity="error" className='error'><p style={{ color: 'black' }}>{error.response.status} error code: Cannot find collection of tea. Please check input.</p></Alert>
 
         }
 
         else if(errorType === 400){
 
-            return <Alert variant="filled" severity="error" id='error'><p style={{ color: 'red' }}>{error.response.status} error code: Bad request for tea. Please check input.</p></Alert>
+            return <Alert variant="filled" severity="error" className='error'><p style={{ color: 'red' }}>{error.response.status} error code: Bad request for tea. Please check input.</p></Alert>
 
         }
         else{
 
-            return <Alert variant="filled" severity="error" id='error'><p style={{ color: 'red' }}>There seems to be an error. Please try again later.</p></Alert>
+            return <Alert variant="filled" severity="error" className='error'><p style={{ color: 'red' }}>There seems to be an error. Please try again later.</p></Alert>
 
         }
 

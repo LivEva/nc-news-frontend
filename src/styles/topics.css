@@ -2,6 +2,7 @@
   .topics-card {
   
     padding: 10px;
+    margin-right: 35px;
     width: 300px;
     border: 2px solid #fbf3f3;
     background-color: #f9f9f9;
@@ -35,13 +36,20 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+  
+    width: 100%;
+    margin: 20px;
   
   }
 
   .whole-container{
     width: 100vw;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
   }
 
  
