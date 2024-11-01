@@ -79,7 +79,7 @@ const ArticlesList = () => {
 
     return (
 
-    <div>
+    <div className="articles-page">
 
         <SortBy setSearchParams={setSearchParams} setSortByCriteria={setSortByCriteria} setSortOrder={setSortOrder} sortByCriteria={sortByCriteria} sortOrder={sortOrder} />
 
